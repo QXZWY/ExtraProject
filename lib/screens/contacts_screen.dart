@@ -69,7 +69,7 @@ class _ContactsScreenState extends State<ContactsScreen> {
                 child: contact.avatarUrl.isEmpty ? Icon(Icons.person, size: 50) : null,
               ),
               SizedBox(height: 20),
-              Text('почта: ${_generateRandomPhoneNumber()}'),
+              Text('Автор заметки: ${_generateRandomPhoneNumber()}'),
             ],
           ),
           actions: [
@@ -217,14 +217,14 @@ class _AddContactScreenState extends State<AddContactScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Добавить контакт'),
+        title: Text('Добавить заметку'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             TextField(
-              decoration: InputDecoration(labelText: 'Имя'),
+              decoration: InputDecoration(labelText: 'Название'),
               onChanged: (value) {
                 setState(() {
                   _name = value;
@@ -232,7 +232,7 @@ class _AddContactScreenState extends State<AddContactScreen> {
               },
             ),
             TextField(
-              decoration: InputDecoration(labelText: 'URL аватарки'),
+              decoration: InputDecoration(labelText: 'URL'),
               onChanged: (value) {
                 setState(() {
                   _avatarUrl = value;
@@ -247,7 +247,7 @@ class _AddContactScreenState extends State<AddContactScreen> {
                   Navigator.pop(context);
                 }
               },
-              child: Text('Добавить контакт'),
+              child: Text('Добавить'),
             ),
           ],
         ),
